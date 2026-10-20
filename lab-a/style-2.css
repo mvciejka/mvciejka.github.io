@@ -1,3 +1,112 @@
+:root {
+    --img-size: 250px;
+    --logo-img-size: 350px;
+    --img-border: 10px;
+    /* połowa całej wysokości obrazka razem z ramką do przesuwania i odstępów */
+    --img-offset: calc(var(--img-size) / 2 + var(--img-border));
+}
+
+@media (max-width: 700px) {
+    :root {
+        --img-size: 150px;
+        --logo-img-size: 200px;
+        --img-border: 5px;
+        --img-offset: calc(var(--img-size) / 2 + var(--img-border));
+    }
+}
+
 body {
-  background-color: #ecfbe6;
+    background-color: #EFEFEF;
+    background-image: url('assets/background-2.png');
+    background-repeat: repeat;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, section, footer, ul li {
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 4.6px 9.3px 9.3px hsl(0deg 0% 0% / 0.36);
+
+}
+
+section {
+    padding: 2%;
+    /* przerwa / miejsce nad sekcją na wystającą połowę obrazka */
+    margin: calc(var(--img-offset) + 20px) 20px 20px;
+}
+
+p {
+    text-align: justify;
+}
+
+img {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.neon-border {
+    content: "";
+    filter: drop-shadow(0 0 20px #0456ff);
+    background: linear-gradient(to top, #0456ff, #c768ff, #c768ff);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-image {
+    width: calc(var(--logo-img-size) + var(--img-border));
+    height: calc(var(--logo-img-size) + var(--img-border));
+}
+
+.logo-image img {
+    display: block;
+    width: var(--logo-img-size);
+    height: var(--logo-img-size);
+}
+
+.header-image {
+    width: calc(var(--img-size) + var(--img-border));
+    height: calc(var(--img-size) + var(--img-border));
+    margin-top: calc(-1 * var(--img-offset));
+}
+
+.header-image img {
+    width: var(--img-size);
+    height: var(--img-size);
+}
+
+@counter-style daggers {
+    system: cyclic;
+    symbols: "\2020";
+    suffix: " ";
+}
+
+ul {
+    text-align: justify;
+    list-style-type: daggers;
+}
+
+ul li {
+    margin: 10px;
+    padding: 10px;
+    background-color: cornsilk;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+a {
+    margin: 10px;
+    color: black;
+}
+
+a:hover {
+    color: #0092ca;
+    font-size: larger;
 }

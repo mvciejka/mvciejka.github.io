@@ -1,3 +1,118 @@
 body {
-  background-color: #dfecff;
+    background: radial-gradient(circle, rgba(15, 17, 21, 1) 40%, rgba(57, 62, 70, 1) 100%);
+    color: #eeeeee;
+    font-family: monospace;
 }
+
+section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1.5rem;
+    align-items: start;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+h2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+
+h2, h3 {
+    text-align: left;
+    text-decoration: underline;
+}
+
+.header-image {
+    grid-column: 1;
+    grid-row: 2 / span 50;
+    align-self: start;
+}
+
+img {
+    max-width: 250px;
+    height: auto;
+    border: 2px solid #0092ca;
+}
+
+@counter-style exmark {
+    system: cyclic;
+    symbols: "!";
+    suffix: " ";
+}
+
+ul {
+    list-style-type: exmark;
+    color: red;
+}
+
+ul li {
+    margin: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+a {
+    color: #0092ca;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: larger;
+}
+
+a:hover {
+    border: 2px solid #0092ca;
+}
+
+/* =========================================================================
+
+                                Mobiles
+
+============================================================================ */
+
+@media (max-width: 700px) {
+    header {
+        display: block;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+
+    h2 {
+        order: -1;
+    }
+
+    .logo-image, .header-image {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin-bottom: 1rem;
+        width: 50%;
+    }
+
+    .logo-image {
+        width: 75%;
+        margin: auto;
+    }
+
+    img {
+        max-width: 80%;
+    }
+}
+
